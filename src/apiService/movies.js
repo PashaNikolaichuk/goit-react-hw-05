@@ -27,3 +27,31 @@ export const getMovieDetails = async (id) => {
     return null;
   }
 };
+
+export const getMoviesReviews = async (reviewsId) => {
+  try {
+    const { data } = await axios.get(`/movie/${reviewsId}/reviews`);
+    return data;
+  } catch (error) {
+    console.error("Error reviews movie :", error);
+    return null;
+  }
+};
+
+export const getMoviesCredits = async (creditsId) => {
+  try {
+    const { data } = await axios.get(`/movie/${creditsId}/credits`);
+    return data;
+  } catch (error) {
+    console.error("Error credits movie :", error);
+    return null;
+  }
+};
+
+// export const getMoviesSearch = async (search, page) => {
+//   try {
+//   } catch (error) {
+//     console.error("Error search movie :", error);
+//     return null;
+//   }
+// };

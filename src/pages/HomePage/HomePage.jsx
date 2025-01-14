@@ -12,7 +12,7 @@ const HomePage = () => {
       try {
         setIsLoading(true);
         const data = await getMovies();
-        console.log(data);
+
         setMovies(data);
       } catch (error) {
         console.log(error.message);

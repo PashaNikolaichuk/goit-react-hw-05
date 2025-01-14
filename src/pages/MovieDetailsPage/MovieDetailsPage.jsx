@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import { getMovieDetails } from "../../apiService/movies";
 import s from "./MovieDetailsPage.module.css";
 import Loader from "../../components/Loader/Loader";
@@ -7,13 +7,14 @@ import Loader from "../../components/Loader/Loader";
 const MovieDetailsPage = () => {
   const { moviesId } = useParams(); // Отримуємо id фільму з URL
   const [detailed, setDetailed] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     const getDataDetails = async () => {
       try {
         const movie = await getMovieDetails(moviesId);
-        console.log(movie);
+
         setDetailed(movie);
         await new Promise((resolve) => setTimeout(resolve, 1000)); // Для демонстрації лоадера
       } catch (error) {
@@ -51,6 +52,18 @@ const MovieDetailsPage = () => {
       </div>
       <div>
         <h2>Additional Information</h2>
+        <nav>
+          <ul>
+            <li>
+              <Link to="review">Review</Link>
+            </li>
+            <li>
+              <Link to="cast">Cast</Link>
+            </li>
+          </ul>
+        </nav>
+        {/* для того де показувати інформацію */}
+        <Outlet />
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+import s from "./Forma.module.css";
+
 const Forma = ({ addNewMovies }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -12,9 +14,11 @@ const Forma = ({ addNewMovies }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="search" required autoFocus />
-      <button type="submit">Search</button>
+    <form onSubmit={handleSubmit} className={s.forma}>
+      <input name="search" required autoFocus className={s.formaInput} />
+      <button className={s.formaBtn} type="submit">
+        Search
+      </button>
     </form>
   );
 };
