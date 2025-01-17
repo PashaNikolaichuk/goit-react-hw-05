@@ -17,3 +17,31 @@
 .movieDetailsImg {
   border-radius: 8px;
 }
+
+.movieDetailsPageTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.movieDetailsPageList {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.movieDetailsPageItem {
+  padding: 20px;
+  background-color: wheat;
+  border-radius: 10px;
+}
+
+.goBack {
+  display: inline-block;
+  background-color: antiquewhite;
+  padding: 10px;
+  border-radius: 7px;
+  margin-bottom: 20px;
+}

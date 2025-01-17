@@ -15,7 +15,13 @@ const Forma = ({ addNewMovies }) => {
 
   return (
     <form onSubmit={handleSubmit} className={s.forma}>
-      <input name="search" required autoFocus className={s.formaInput} />
+      <input
+        name="search"
+        required
+        autoFocus
+        className={s.formaInput}
+        placeholder="Enter movie which you want find"
+      />
       <button className={s.formaBtn} type="submit">
         Search
       </button>

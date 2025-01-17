@@ -1,0 +1,26 @@
+.forma {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.formaInput {
+  width: 300px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.formaBtn {
+  cursor: pointer;
+  background-color: papayawhip;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+}
+
+.formaBtn:hover {
+  background-color: #ccc;
+}

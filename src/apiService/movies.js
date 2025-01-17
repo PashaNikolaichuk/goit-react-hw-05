@@ -48,10 +48,15 @@ export const getMoviesCredits = async (creditsId) => {
   }
 };
 
-// export const getMoviesSearch = async (search, page) => {
-//   try {
-//   } catch (error) {
-//     console.error("Error search movie :", error);
-//     return null;
-//   }
-// };
+export const getMoviesSearch = async (query) => {
+  try {
+    const { data } = await axios.get(`/search/movie`, {
+      params: { query }, // Додаємо пошуковий запит
+    });
+    console.log(data.results);
+    return data;
+  } catch (error) {
+    console.error("Error search movie :", error);
+    return { results: [] };
+  }
+};
