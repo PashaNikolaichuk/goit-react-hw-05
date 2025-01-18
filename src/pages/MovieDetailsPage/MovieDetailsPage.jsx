@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Link,
   Outlet,
@@ -16,6 +16,7 @@ const MovieDetailsPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   // const navigate = useNavigate();
   const location = useLocation();
+  const previousLocation = useRef(location.state || "/");
 
   useEffect(() => {
     setIsLoading(true);
@@ -46,8 +47,9 @@ const MovieDetailsPage = () => {
   return (
     <div className={s.MovieDetailsPage}>
       {/* <button onClick={() => navigate(-1)}>Go Back</button> */}
+
       {/*  // показує звідки ти прийшов, туди і йди */}
-      <Link className={s.goBack} to={location.state}>
+      <Link className={s.goBack} to={previousLocation.current}>
         Go Back
       </Link>
       <div className={s.wrapper}>
